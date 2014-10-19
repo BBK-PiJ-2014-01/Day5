@@ -1,0 +1,10 @@
+
+
+class Power {
+	int base;
+	int exponent;
+
+	double power (int base, int exponent) {
+
+	}
+}

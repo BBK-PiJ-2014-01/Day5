@@ -1,0 +1,41 @@
+// Factorial
+
+println(factorial_recursive(5));
+println(factorial_iterative(5));
+
+int factorial_recursive(int n) {	
+	if (n == 1)
+		return(1);
+	else {	
+		int result = n * factorial_recursive(n-1);
+		return(result);
+	}
+}
+
+int factorial_iterative(int n) {
+	int result = n;
+	for (int i = n-1 ; i > 0; i--) {
+		result *= i;
+	}
+	return(result);
+}
+
+// Fibonacci
+
+println(fibonacci_recursive(5));
+// println(fibonacci_iterative(5));
+
+int fibonacci_recursive(int n) {
+	if ((n==1) || (n==2))
+		return(1);
+	else {
+		int result = fibonacci_recursive(n-3) + fibonacci_recursive(n-2);
+		return(result);
+	}
+}
+
+/*
+int fibonacci_iterative(int n) {
+
+} 
+*/
