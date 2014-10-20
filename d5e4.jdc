@@ -1,0 +1,2 @@
+println("Enter a piece of text: ");
+String input = System.console().readLine();

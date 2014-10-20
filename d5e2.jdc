@@ -1,7 +1,12 @@
-// Factorial
-
 println(factorial_recursive(5));
 println(factorial_iterative(5));
+
+println(fibonacci_recursive(10)); 
+// Result = 55
+println(fibonacci_iterative(10));
+
+
+// 2.1 Factorial - Code complete
 
 int factorial_recursive(int n) {	
 	if (n == 1)
@@ -20,22 +25,26 @@ int factorial_iterative(int n) {
 	return(result);
 }
 
-// Fibonacci
-
-println(fibonacci_recursive(5));
-// println(fibonacci_iterative(5));
+// 2.2 Fibonacci
 
 int fibonacci_recursive(int n) {
+	int result = 0;
 	if ((n==1) || (n==2))
-		return(1);
-	else {
-		int result = fibonacci_recursive(n-3) + fibonacci_recursive(n-2);
-		return(result);
-	}
+		result = 1;
+	else 
+		result = fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
+	return(result);
 }
 
-/*
 int fibonacci_iterative(int n) {
-
+	int result = 0;
+	number1 = 1;
+	number2 = 2;
+	if (((n==1) || (n==2))
+		result = 1;
+	
+	for (int i=0; i<=n ; i++)
+		result = (result-1) + (result-2)
 } 
-*/
+
+// 2.3 Hanoi towers
