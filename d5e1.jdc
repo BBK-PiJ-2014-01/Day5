@@ -1,6 +1,18 @@
-// Part a)
-
+println("Part A");
 printNumbers(6);
+println();
+println("Part B");
+println(buggyMethod(4));
+println();
+println("Part C");
+println(doggyMethod(4));
+println();
+println("Part D");
+println(mcCarthy91(50));
+println(mcCarthy91(73));
+println(mcCarthy91(95));
+
+// Part a)
 
 void printNumbers (int n) {
 	if (n<=0) {
@@ -10,4 +22,33 @@ void printNumbers (int n) {
 	printNumbers(n-2);
 	printNumbers(n-3);
 	println(n);
+}
+
+// Part b)
+
+static String buggyMethod(int n) {
+	if (n<=0) {
+		return "";
+	}
+	return n + " " + buggyMethod(n-2);
+}
+
+// Part c)
+
+static String doggyMethod(int n) {
+	if (n<=0) {
+		return "";
+	}
+	String result = doggyMethod(n-3) + n + doggyMethod(n-2);
+	return result;
+}
+
+// Part d)
+
+int mcCarthy91(int n) {
+	if (n>100) {
+		return n - 10;
+	} else {
+		return mcCarthy91(mcCarthy91(n+11));
+	}
 }
