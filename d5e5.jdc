@@ -1,10 +1,39 @@
+println(Calculator.pow_recursive(3,-8));
+println(Calculator.pow_iterative(3,-8));
 
+println(Calculator.pow_recursive(5,0));
+println(Calculator.pow_iterative(5,0));
 
-class Power {
-	int base;
-	int exponent;
+println(Calculator.pow_recursive(5,3));
+println(Calculator.pow_iterative(5,3));
 
-	double power (int base, int exponent) {
+class Calculator
+{
+	static double pow_recursive (int base, int exponent) {
+		if (exponent == 0)
+			return (1);
+		else {
+			double result = 0;
+			if (exponent > 0)
+				result = base * pow_recursive(base, exponent - 1);
+			else
+				result = 1 / (base * pow_recursive(base, -exponent - 1));
+			return(result);
+		}  
+	}
 
+	static double pow_iterative (int base, int exponent) {
+		if (exponent == 0)
+			return (1);
+		else {
+			double result = 1;
+			if (exponent > 0)
+				for (int i=1;i<=exponent;i++) 
+					result = result * base;
+			else
+				for (int i=1;i<=-exponent;i++) 
+					result = result * 1 / base;
+			return(result);
+		}
 	}
 }
