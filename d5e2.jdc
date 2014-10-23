@@ -1,10 +1,17 @@
+println("Factorial 5:");
 println(factorial_recursive(5));
 println(factorial_iterative(5));
+println();
 
+println("10th Fibonacci number:");
 println(fibonacci_recursive(10)); 
-// Result = 55
 println(fibonacci_iterative(10));
+println();
 
+println("Hanoi towers with three posts:");
+println("With 3 disks, " + hanoi(3) + " moves are required");
+println("With 4 disks, " + hanoi(4) + " moves are required");
+println("With 5 disks, " + hanoi(5) + " moves are required");
 
 // 2.1 Factorial - Code complete
 
@@ -25,26 +32,47 @@ int factorial_iterative(int n) {
 	return(result);
 }
 
-// 2.2 Fibonacci
+// 2.2 Fibonacci - Code complete
 
 int fibonacci_recursive(int n) {
-	int result = 0;
 	if ((n==1) || (n==2))
-		result = 1;
-	else 
-		result = fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
-	return(result);
+		return(1);
+	else {
+		int result = fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
+		return(result);
+	}
 }
 
 int fibonacci_iterative(int n) {
 	int result = 0;
-	number1 = 1;
-	number2 = 2;
-	if (((n==1) || (n==2))
-		result = 1;
-	
-	for (int i=0; i<=n ; i++)
-		result = (result-1) + (result-2)
+	int lastResult = 0;
+	int beforeLastResult = 0;
+	for (int i=1; i<=n ; i++) {
+		if (i==1) {
+			result = 1;
+			lastResult = 1;
+		} else {
+			if (i==2) {
+				result = 1;
+				beforeLastResult = lastResult;
+				lastResult = 1; 
+			} else {
+				result = beforeLastResult + lastResult;
+				beforeLastResult = lastResult;
+				lastResult = result;
+			}		
+		}
+	}
+	return(result);
 } 
 
-// 2.3 Hanoi towers
+// 2.3 Hanoi towers - Code complete
+
+int hanoi(int n) {
+	int result = 0;
+	if (n==1)
+		result = 1;
+	else
+		result = 2 * hanoi(n-1) + 1;
+	return(result);
+}
