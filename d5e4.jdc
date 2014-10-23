@@ -1,2 +1,11 @@
 println("Enter a piece of text: ");
 String input = System.console().readLine();
+
+println(palindrome(input,0));
+
+boolean palindrome(String input, int counter) {
+	if (input.charAt(counter) != input.charAt(input.length()-counter))
+		return false;
+	else
+		palindrom(input, counter+1);
+}
