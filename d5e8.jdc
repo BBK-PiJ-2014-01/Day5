@@ -1,0 +1,23 @@
+// double: stack overflow after 6337 method calls
+// int: stack overflow after 7036 method calls
+
+println(recursion_double(0));
+
+double recursion_double(int counter) {
+	print(counter + " ");
+	double result = 0;
+	result = counter + recursion_double(counter + 1);
+	return(result);
+}
+
+int recursion_int(int counter) {
+	print(counter + " ");
+	int result = 0;
+	int temp1 = 1;
+	int temp2 = 2;
+	int temp3 = 3;
+	int temp4 = 4;
+	int temp5 = 5;	
+result = counter + recursion_int(counter + 1);
+	return(result);
+}
