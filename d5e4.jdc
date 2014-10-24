@@ -1,11 +1,19 @@
+// Palindrome - Recursive method
+
 println("Enter a piece of text: ");
 String input = System.console().readLine();
 
 println(palindrome(input,0));
 
 boolean palindrome(String input, int counter) {
-	if (input.charAt(counter) != input.charAt(input.length()-counter))
-		return false;
+	boolean result = true;
+	if (input.charAt(counter) != input.charAt(input.length()-1-counter))
+		return(false);
 	else
-		palindrom(input, counter+1);
+		if (counter >= input.length()-1-counter)
+			return(true);
+	else {
+		result = palindrome(input, counter + 1);
+		return(result);
+	}
 }
