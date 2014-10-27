@@ -1,3 +1,4 @@
+
 println("Factorial 5:");
 println(factorial_recursive(5));
 println(factorial_iterative(5));
@@ -6,7 +7,8 @@ println();
 println("10th Fibonacci number:");
 println(fibonacci_recursive(10)); 
 println(fibonacci_iterative(10));
-println();
+Fresult fResult = new Fresult();
+println(fResult.fibonacci_recursive2(10));
 
 println("Hanoi towers with three posts:");
 println("With 3 disks, " + hanoi(3) + " moves are required");
@@ -43,6 +45,10 @@ int fibonacci_recursive(int n) {
 	}
 }
 
+// 2.3 Fibonacci - Memory optimisation - Code complete
+
+
+
 int fibonacci_iterative(int n) {
 	int result = 0;
 	int lastResult = 0;
@@ -66,7 +72,7 @@ int fibonacci_iterative(int n) {
 	return(result);
 } 
 
-// 2.3 Hanoi towers - Code complete
+// 2.3 Hanoi towers
 
 int hanoi(int n) {
 	int result = 0;
@@ -75,4 +81,21 @@ int hanoi(int n) {
 	else
 		result = 2 * hanoi(n-1) + 1;
 	return(result);
+}
+
+class Fresult {
+	int result;
+	int lastResult;
+	
+	int fibonacci_recursive2(int n) {
+		if ((n==1) || (n==2)) {
+			result = 1;	
+			lastResult = 1;
+		}
+		else {
+			result = fibonacci_recursive2(n-1) + lastResult;
+			lastResult = result - lastResult;
+		}
+		return(result);		
+	}
 }
