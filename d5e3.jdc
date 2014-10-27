@@ -1,0 +1,27 @@
+
+Paper paper = new Paper();
+paper.description = "A4";
+paper.printSize();
+
+class Paper {
+	String description;
+	double width;
+	double height;
+
+	boolean printSize(String paper) {
+		int i = 0;
+		int digit = 0;
+		if (this.description.charAt(0)!= 'A')
+			println("Not a valid paper size");
+		else
+			if (this.charAt(i+1).isDigit())
+				digit = Integer.parseInt(this.charAt(i+1))
+				if (this.description.length() < 3)
+					if (digit == 0) {
+						width = 1189;
+						height = 841;
+					} else
+						digit -= 1 
+						printSize("A"+digit);
+	}
+}
